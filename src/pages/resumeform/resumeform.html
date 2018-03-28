@@ -1,0 +1,975 @@
+<ion-header>
+    <ion-toolbar class="logo">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="viewCtrl.dismiss()">
+                    <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Resume Form</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding> 
+    <form [formGroup]="resume_Form">
+        <h3>Education</h3>
+        <div class="panel panel-default" formGroupName="education">
+            <div formGroupName="voc_edu">
+                <h5>Vocational/Technical School</h5>
+                <ion-list>
+                    <ion-item>
+                        <ion-textarea formControlName="name_address" placeholder="Name & Address"></ion-textarea>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.voc_edu.name_address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.voc_edu.name_address').hasError('minlength')">
+                            *This field be more than 35 characters long.
+                        </span>
+                    </span>
+                </ion-list>
+                <ion-list>
+                    <ion-item>
+                        
+                        <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" formControlName="date"></ion-datetime>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.voc_edu.date').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.voc_edu.date').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+                <ion-item>
+                    <ion-label>Graduated</ion-label>
+                </ion-item>
+
+              <ion-list class="radio-list" radio-group formControlName="graduate">
+                    <ion-item>
+                        <ion-label>Yes</ion-label>
+                        <ion-radio value="Y" checked></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>No</ion-label>
+                        <ion-radio value="N"></ion-radio>
+                    </ion-item>
+</ion-list>
+      <span item-content *ngIf="resume_Form.get('education.voc_edu.graduate').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.voc_edu.graduate').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                <ion-list>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="degree_earned" placeholder="Degree Earned"></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.voc_edu.degree_earned').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.voc_edu.degree_earned').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+            </div>
+            <h5>Hospital</h5>
+            <div formGroupName="hospital">
+                <ion-list>
+                    <ion-item>
+                        <ion-textarea formControlName="name_address" placeholder="Name & Address"></ion-textarea>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.hospital.name_address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.hospital.name_address').hasError('minlength')">
+                            *This field be more than 35 characters long.
+                        </span>
+                    </span>
+
+                </ion-list>
+                <ion-list>
+                    <ion-item>
+                        <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" formControlName="date"></ion-datetime>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.hospital.date').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.hospital.date').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+                <ion-item>
+                    <ion-label>Graduated</ion-label>
+                </ion-item>
+
+                <ion-list class="radio-list" radio-group formControlName="graduate">
+                    <ion-item>
+                        <ion-label>Yes</ion-label>
+                        <ion-radio value="Y" checked></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>No</ion-label>
+                        <ion-radio value="N"></ion-radio>
+                    </ion-item>
+ </ion-list>
+<span item-content *ngIf="resume_Form.get('education.hospital.graduate').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.hospital.graduate').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                <ion-list>
+                    <ion-item>
+                        <ion-input type="text" formControlName="degree_earned" placeholder="Degree Earned"></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.hospital.degree_earned').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.hospital.degree_earned').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+            </div>
+            <h5>College</h5>
+            <div formGroupName="college">
+                <ion-list>
+                    <ion-item>
+                        <ion-textarea formControlName="name_address" placeholder="Name & Address"></ion-textarea>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.college.name_address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.college.name_address').hasError('minlength')">
+                            *This field be more than 35 characters long.
+                        </span>
+                    </span>
+
+                </ion-list>
+                <ion-list>
+                    <ion-item>
+                        <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" formControlName="date"></ion-datetime>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.college.date').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.college.date').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+                <ion-item>
+                    <ion-label>Graduated</ion-label>
+                </ion-item>
+
+                <ion-list class="radio-list" radio-group formControlName="graduate">
+                    <ion-item>
+                        <ion-label>Yes</ion-label>
+                        <ion-radio value="Y" checked></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>No</ion-label>
+                        <ion-radio value="N"></ion-radio>
+                    </ion-item>
+</ion-list>
+                <span item-content *ngIf="resume_Form.get('education.college.graduate').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.college.graduate').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                <ion-list>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="degree_earned" placeholder="Degree Earned"></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.college.degree_earned').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.college.degree_earned').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+            </div>
+            <h5>additional Education/Training</h5>
+            <div formGroupName="additional_edu">
+                <ion-list>
+                    <ion-item>
+
+                        <ion-textarea formControlName="name_address"  placeholder="Name & Address"></ion-textarea>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.additional_edu.name_address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.additional_edu.name_address').hasError('minlength')">
+                            *This field be more than 35 characters long.
+                        </span>
+                    </span>
+
+                </ion-list>
+                <ion-list>
+                    <ion-item>
+
+                        <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" formControlName="date"></ion-datetime>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.additional_edu.date').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.additional_edu.date').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+                <ion-item>
+                    <ion-label>Graduated</ion-label>
+                </ion-item>
+
+                <ion-list class="radio-list" radio-group formControlName="graduate">
+                    <ion-item>
+                        <ion-label>Yes</ion-label>
+                        <ion-radio value="Y" checked></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>No</ion-label>
+                        <ion-radio value="N"></ion-radio>
+                    </ion-item>
+
+                    
+
+                </ion-list>
+<span item-content *ngIf="resume_Form.get('education.additional_edu.graduate').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.additional_edu.graduate').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                <ion-list>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="degree_earned" placeholder="Degree Earned"></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('education.additional_edu.degree_earned').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('education.additional_edu.degree_earned').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+            </div>
+        </div>
+
+
+
+        <h3>Professional References</h3>
+        <div class="panel panel-default" formGroupName="professional_ref">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="panel panel-default" formGroupName="ref_1">
+                <h5>Reference #1</h5>
+
+                <ion-list>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="degree_earned" placeholder="Degree Earned"></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_1.degree_earned').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_1.degree_earned').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="tel" formControlName="phone" placeholder="Phone" ></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_1.phone').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_1.phone').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="address" placeholder="Address"></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_1.address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_1.address').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="certification" placeholder="Certification" ></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_1.certification').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_1.certification').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+            </div>
+            <div class="panel panel-default" formGroupName="ref_2">
+                <h5>Reference #2</h5>
+
+                <ion-list>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="degree_earned" placeholder="Degree Earned"></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_2.degree_earned').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_2.degree_earned').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="tel" formControlName="phone" placeholder="Phone" ></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_2.phone').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_2.phone').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="address" placeholder="Address" ></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_2.address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_2.address').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="certification" placeholder="Certification" ></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_2.certification').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_2.certification').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+            </div>
+            <div class="panel panel-default" formGroupName="ref_3">
+                <h5>Reference #2</h5>
+
+                <ion-list>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="degree_earned" placeholder="Degree Earned"></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_3.degree_earned').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_3.degree_earned').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="tel" formControlName="phone" placeholder="Phone" ></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_3.phone').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_3.phone').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="address" placeholder="Address" ></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_3.address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_3.address').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="certification" placeholder="Certification" ></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_3.certification').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_3.certification').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+            </div>
+            <div class="panel panel-default" formGroupName="ref_4">
+                <h5>Reference #2</h5>
+
+                <ion-list>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="degree_earned" placeholder="Degree Earned"></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_4.degree_earned').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_4.degree_earned').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="tel" formControlName="phone" placeholder="Phone" ></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_4.phone').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_4.phone').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="address" placeholder="Address" ></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_4.address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_4.address').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                    <ion-item>
+
+                        <ion-input type="text" formControlName="certification" placeholder="Certification" ></ion-input>
+                    </ion-item>
+                    <span item-content *ngIf="resume_Form.get('professional_ref.ref_4.certification').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('professional_ref.ref_4.certification').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+                </ion-list>
+            </div>
+        </div>
+      <h3>Work History</h3>
+        <div class="panel panel-default" formGroupName="work_his">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <h5>Present Employer</h5>
+         <div formGroupName="pres_emp">
+        <ion-list>
+            <ion-item>
+
+                <ion-input type="text" formControlName="name" placeholder="Name"></ion-input>
+            </ion-item>
+            <span item-content *ngIf="resume_Form.get('work_his.pres_emp.name').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.name').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="unit_floor" placeholder="Unit Floor"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.unit_floor').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.unit_floor').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="address" placeholder="Address"></ion-input>
+            </ion-item>
+            <span item-content *ngIf="resume_Form.get('work_his.pres_emp.address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.address').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="city" placeholder="City"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.city').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.city').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+                <ion-label>State</ion-label>
+                <ion-select formControlName="state">
+                    <ion-option value="nes">NES</ion-option>
+                    <ion-option value="n64">Nintendo64</ion-option>
+                    <ion-option value="ps">PlayStation</ion-option>
+                    <ion-option value="genesis">Sega Genesis</ion-option>
+                    <ion-option value="saturn">Sega Saturn</ion-option>
+                    <ion-option value="snes">SNES</ion-option>
+                </ion-select>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.state').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.state').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="number" formControlName="zip" placeholder="zip"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.zip').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.zip').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="tel" formControlName="phone" placeholder="Phone"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.phone').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.phone').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="supervisor_name" placeholder="Supervisor Name"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.supervisor_name').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.supervisor_name').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" formControlName="date"></ion-datetime>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.date').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.date').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='title' placeholder="Title"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.title').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.title').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='position_duties' placeholder="Position/Duties"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.position_duties').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.position_duties').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='shift_worked' placeholder="Shift Worked"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.shift_worked').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.shift_worked').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='leav_reason' placeholder="Reason For Leaving"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.leav_reason').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.leav_reason').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="sal_pay" placeholder="Hourly/ Salary Pay"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.pres_emp.sal_pay').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.pres_emp.sal_pay').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+        </ion-list>
+         </div>
+      <h5>Previous Employer</h5>
+        <div formGroupName="prev_1">
+        <ion-list>
+            <ion-item>
+
+                <ion-input type="text" formControlName="name" placeholder="Name"></ion-input>
+            </ion-item>
+            <span item-content *ngIf="resume_Form.get('work_his.prev_1.name').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.name').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="unit_floor" placeholder="Unit Floor"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.unit_floor').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.unit_floor').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+ 
+                <ion-input type="text" formControlName="address" placeholder="Address"></ion-input>
+            </ion-item>
+            <span item-content *ngIf="resume_Form.get('work_his.prev_1.address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.address').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="city" placeholder="City"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.city').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.city').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+                <ion-label>State</ion-label>
+                <ion-select formControlName="state">
+                    <ion-option value="nes">NES</ion-option>
+                    <ion-option value="n64">Nintendo64</ion-option>
+                    <ion-option value="ps">PlayStation</ion-option>
+                    <ion-option value="genesis">Sega Genesis</ion-option>
+                    <ion-option value="saturn">Sega Saturn</ion-option>
+                    <ion-option value="snes">SNES</ion-option>
+                </ion-select>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.state').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.state').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="number" formControlName="zip" placeholder="Zip"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.zip').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.zip').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="tel" formControlName="phone" placeholder="Phone"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.phone').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.phone').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="supervisor_name" placeholder="Supervisor Name"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.supervisor_name').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.supervisor_name').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" formControlName="date"></ion-datetime>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.date').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.date').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='title' placeholder="Title"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.title').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.title').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='position_duties' placeholder="Position/Duties"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.position_duties').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.position_duties').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='shift_worked' placeholder="Shift Worked"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.shift_worked').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.shift_worked').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='leav_reason' placeholder="Reason For Leaving"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.leav_reason').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.leav_reason').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="sal_pay" placeholder="Hourly/ Salary Pay"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_1.sal_pay').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_1.sal_pay').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+        </ion-list>
+         </div>
+        <h5>Previous Employer</h5>
+        
+        <div formGroupName="prev_2">
+        <ion-list>
+            <ion-item>
+
+                <ion-input type="text" formControlName="name" placeholder="Name"></ion-input>
+            </ion-item>
+            <span item-content *ngIf="resume_Form.get('work_his.prev_2.name').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.name').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="unit_floor" placeholder="Unit Floor"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.unit_floor').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.unit_floor').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="address" placeholder="Address"></ion-input>
+            </ion-item>
+            <span item-content *ngIf="resume_Form.get('work_his.prev_2.address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.address').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="city" placeholder="City"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.city').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.city').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+                <ion-label>State</ion-label>
+                <ion-select formControlName="state">
+                    <ion-option value="nes">NES</ion-option>
+                    <ion-option value="n64">Nintendo64</ion-option>
+                    <ion-option value="ps">PlayStation</ion-option>
+                    <ion-option value="genesis">Sega Genesis</ion-option>
+                    <ion-option value="saturn">Sega Saturn</ion-option>
+                    <ion-option value="snes">SNES</ion-option>
+                </ion-select>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.state').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.state').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="number" formControlName="zip" placeholder="Zip"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.zip').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.zip').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="tel" formControlName="phone" placeholder="Phone"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.phone').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.phone').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="supervisor_name" placeholder="Supervisor Name"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.supervisor_name').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.supervisor_name').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" formControlName="date"></ion-datetime>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.date').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.date').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='title' placeholder="Title"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.title').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.title').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='position_duties' placeholder="Position/Duties"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.position_duties').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.position_duties').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='shift_worked' placeholder="Shift Worked"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.shift_worked').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.shift_worked').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='leav_reason' placeholder="Reason For Leaving"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.leav_reason').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.leav_reason').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="sal_pay" placeholder="Hourly/ Salary Pay"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_2.sal_pay').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_2.sal_pay').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+        </ion-list>
+         </div>
+
+        <h5>Previous Employer</h5>
+        <div formGroupName="prev_3">
+        <ion-list>
+            <ion-item>
+  
+                <ion-input type="text" formControlName="name" placeholder="Name"></ion-input>
+            </ion-item>
+            <span item-content *ngIf="resume_Form.get('work_his.prev_3.name').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.name').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="unit_floor" placeholder="Unit Floor"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.unit_floor').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.unit_floor').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="address" placeholder="Address"></ion-input>
+            </ion-item>
+            <span item-content *ngIf="resume_Form.get('work_his.prev_3.address').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.address').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="city" placeholder="City"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.city').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.city').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+                <ion-label>State</ion-label>
+                <ion-select formControlName="state">
+                    <ion-option value="nes">NES</ion-option>
+                    <ion-option value="n64">Nintendo64</ion-option>
+                    <ion-option value="ps">PlayStation</ion-option>
+                    <ion-option value="genesis">Sega Genesis</ion-option>
+                    <ion-option value="saturn">Sega Saturn</ion-option>
+                    <ion-option value="snes">SNES</ion-option>
+                </ion-select>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.state').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.state').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="number" formControlName="zip" placeholder="Zip"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.zip').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.zip').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="tel" formControlName="phone" placeholder="Phone"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.phone').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.phone').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="supervisor_name" placeholder="Supervisor Name"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.supervisor_name').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.supervisor_name').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+  
+                <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" formControlName="date"></ion-datetime>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.date').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.date').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='title' placeholder="Title"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.title').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.title').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='position_duties' placeholder="Position/Duties"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.position_duties').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.position_duties').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='shift_worked' placeholder="Shift Worked"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.shift_worked').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.shift_worked').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName='leav_reason' placeholder="Reason For Leaving"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.leav_reason').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.leav_reason').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+            <ion-item>
+
+                <ion-input type="text" formControlName="sal_pay" placeholder="Hourly/ Salary Pay"></ion-input>
+            </ion-item>
+             <span item-content *ngIf="resume_Form.get('work_his.prev_3.sal_pay').touched" >
+                          <span item-content class="form-error text-danger"  *ngIf="resume_Form.get('work_his.prev_3.sal_pay').hasError('required')">
+                            *This field is required.
+                        </span>
+                    </span>
+        </ion-list>
+         </div>
+        </div>
+
+
+         <button full ion-button [disabled]="!resume_Form.valid" color="blue" (click)="resume_submit(resume_Form)" class="btnblu">Submit</button>
+     </form>
+</ion-content>

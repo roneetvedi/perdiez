@@ -1,0 +1,92 @@
+page-resumeform {
+	ion-toolbar{
+		.toolbar-background,
+		.toolbar-background-ios{
+			background: linear-gradient(left,#26568c,#91c2ff);
+			background: -webkit-linear-gradient(left,#26568c,#91c2ff);
+			background: -moz-linear-gradient(left,#26568c,#91c2ff);
+		}
+		ion-buttons{
+			button{
+				.button-inner{
+					ion-icon{
+						color:#fff;
+					}
+				}
+			}
+		}
+	}
+	
+	// Content Part Scss Include Here 
+	
+	ion-content{
+		.scroll-content{
+			h3{
+				text-align: center;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+			p{
+				text-align:center;
+				font-size:14px;
+				letter-spacing:1px;
+			}
+			h5{
+				text-transform: capitalize;
+				letter-spacing: 1px;
+				color:#222;
+			}
+			ion-list{
+				margin-bottom:0px;
+				ion-item{
+					.item-inner{
+						.input-wrapper{
+							ion-label{
+								font-size:14px;
+								letter-spacing:1px;
+								text-overflow: clip;
+								white-space: normal;
+								color:#a5a5a5;
+							}
+						}
+					}
+					&:first-child{
+						border-top:none !important;
+					}
+					&:last-child{
+						border-bottom:none !important;
+					}
+				}
+				&.radio-list{
+					display:flex;
+					ion-item{
+						.item-inner{
+							border-bottom:none !important;
+						}
+					}
+				}
+				&:last-child{
+					margin-bottom:16px;
+				}
+			}
+			.btnblu{
+				color: #fff;
+				border-radius: 40px;
+				width: 80%;
+				margin: 0 auto;
+				display: table;
+				-webkit-box-shadow: 0 2px 8px 0 #000;
+				box-shadow: 0 2px 8px 0 #000;
+				text-transform: none;
+				padding: 20px 0;
+				font-size: 18px;
+				font-weight: normal;
+				margin-bottom:16px;
+			}
+		}
+	}
+        
+        span.form-error.text-danger{
+            color:red !important;
+        }
+}

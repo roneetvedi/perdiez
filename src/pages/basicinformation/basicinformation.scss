@@ -1,0 +1,93 @@
+page-basicinformation {
+    .item{
+        background-color: transparent;
+    }
+    .itm_slct{
+        width:30%;
+        float:left;
+    }
+    
+    .grop_cvr {
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #8f8f8f;
+    margin-bottom: 3px;
+    
+    .datetime {
+    padding: 13px 8px 13px 0px;
+}
+}
+
+/*.grop_cvr:last-child{
+  
+    border-bottom: none;
+        
+}*/
+
+	ion-toolbar{
+		.toolbar-background,
+		.toolbar-background-ios{
+			background: linear-gradient(left,#26568c,#91c2ff);
+			background: -webkit-linear-gradient(left,#26568c,#91c2ff);
+			background: -moz-linear-gradient(left,#26568c,#91c2ff);
+		}
+		ion-buttons{
+			button{
+				.button-inner{
+					ion-icon{
+						color:#fff;
+					}
+				}
+			}
+		}
+	}
+	
+	// Content Part Scss Include Here 
+	
+	ion-content{
+		.scroll-content{
+			ion-list{
+				margin:0px;
+				ion-item{
+					.item-inner{
+						border-bottom:none !important;
+						.input-wrapper{
+							ion-label{
+								font-size:14px;
+								letter-spacing:1px;
+								text-overflow: clip;
+								white-space: normal;
+								color:#a5a5a5;
+							}
+						}
+					}
+					&:first-child{
+						border-top:none !important;
+					}
+				}
+				&.radio-list{
+					display:flex;
+				}
+				&:last-child{
+					margin-bottom:16px;
+				}
+			}
+			.btnblu{
+				color: #fff;
+				border-radius: 40px;
+				width: 80%;
+				margin: 0 auto;
+				display: table;
+				-webkit-box-shadow: 0 2px 8px 0 #000;
+				box-shadow: 0 2px 8px 0 #000;
+				text-transform: none;
+				padding: 20px 0;
+				font-size: 18px;
+				font-weight: normal;
+				margin-bottom:16px;
+			}
+		}
+
+  
+        }
+}

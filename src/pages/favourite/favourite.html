@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar align-title="center">
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col col-2><button ion-button menuToggle>
+            <ion-icon class="menu" name="menu"></ion-icon>
+          </button></ion-col>
+        <ion-col col-8> <ion-title><h6>Favourite</h6></ion-title></ion-col>
+        <ion-col col-2>  <button ion-button >
+            <img (click)="gotomodelfilter()" class="filter" src="assets/imgs/filter.png">
+            </button></ion-col>
+      </ion-row>
+    </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid  no-padding>
+    <ion-row>
+      <ion-col col-12 no-padding>
+          <div *ngFor="let flisting of listfavdata">
+              <div *ngFor="let flistings of flisting.data.hospitals">
+              <div class="prfl-detl" (click)="detail(flistings._id)"  >
+            <img class="favimg" src={{this.url}}{{flistings.bannerimage}}>
+               <div class="ovrly_hrt">
+          <ion-grid class="favbox">
+            <ion-row>
+            <ion-col col-7>
+              <h4>{{flistings.title}},{{flistings.country}}</h4>
+            </ion-col>
+            <ion-col col-5>
+              <div class="heart-bx">
+               <ion-icon class="heart" name="heart"></ion-icon></div>
+              </ion-col>
+           </ion-row>
+        <ion-row>
+          <ion-col col-1>  <ion-icon class="pin" name="pin"></ion-icon></ion-col>
+          <ion-col col-5><h5>{{flistings.city}}</h5></ion-col>
+          <ion-col ocl-6>
+            <div class="multistars">
+              <ion-icon class="star" name="star"></ion-icon>
+              <ion-icon class="star" name="star"></ion-icon>
+              <ion-icon class="star" name="star"></ion-icon>
+              <ion-icon class="star" name="star"></ion-icon>
+              <ion-icon class="star" name="star"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+          </ion-grid></div>
+        </div>
+</div>
+      </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

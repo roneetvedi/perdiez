@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+          <button ion-button menuToggle>
+            <ion-icon class="menu1" name="menu"></ion-icon>
+          </button>
+           <ion-title><h6>Accept List</h6></ion-title>
+         
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="cntn-bg">
+   <div class="notificatndetails">
+  
+          <div class="prfl-detl" *ngFor="let flisting of acceptlist">
+               <div *ngFor="let flistings of flisting.hospital_info">
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-3>
+                <div class="notifctnimg" (click)="detail(flistings._id)">
+                  <img class="notfct" src={{this.url}}{{flistings.bannerimage}}>
+                </div>
+              </ion-col>
+            <ion-col col-9>
+              <div class="txt-notc">
+              <h4>{{flistings.title}}</h4>
+        <ion-grid class="addbx">
+          <ion-row>
+
+              <ion-col col-1 no-padding>  <ion-icon class="pin" name="pin"></ion-icon></ion-col>
+              <ion-col col-5 no-padding><h5>{{flistings.city}},{{flistings.country}}</h5></ion-col>
+        </ion-row>
+          </ion-grid></div>
+          </ion-col>
+            </ion-row>
+        </ion-grid>
+      </div>
+
+  
+
+   </div>
+    </div>
+</ion-content>

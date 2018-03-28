@@ -1,0 +1,233 @@
+<ion-header>
+    <ion-toolbar class="logo">
+<!--        <ion-buttons left>
+            <button ion-button icon-only (click)="viewCtrl.dismiss()">
+                    <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>-->
+        <ion-title>Basic Information</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding> 
+    <form #basicinfo_Form="ngForm">
+        <div class="grop_cvr">
+        <ion-list radio-group [(ngModel)]="data.prev_physical" name="prev_physical">
+               
+            <ion-item>
+                <ion-label>1. Have you had a Physical from your doctor within last year?</ion-label>
+            </ion-item>
+            
+               <ion-item class="itm_slct">
+                <ion-label>Yes</ion-label>
+                <ion-radio value="Y" checked></ion-radio>
+            </ion-item>
+            
+            <ion-item class="itm_slct">
+                <ion-label>No</ion-label>
+                <a href="basicinformation.ts"></a>
+                <ion-radio value="N"></ion-radio>
+            </ion-item>
+        </ion-list>
+
+        <ion-list>
+            <ion-item>
+                <ion-label>Date of your last Physical?</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY"  [(ngModel)]="data.phy_date" name="phy_date"></ion-datetime>
+            </ion-item>
+        </ion-list>
+        
+
+                <ion-list radio-group [(ngModel)]="data.phy_copy" name="phy_copy">
+            <ion-item>
+                <ion-label>Do you have a copy of your Physical?</ion-label>
+            </ion-item>
+            
+               <ion-item class="itm_slct">
+                <ion-label>Yes</ion-label>
+                <ion-radio value="Y" checked></ion-radio>
+            </ion-item>
+            
+            <ion-item class="itm_slct">
+                <ion-label>No</ion-label>
+                <a href="basicinformation.ts"></a>
+                <ion-radio value="N"></ion-radio>
+            </ion-item>
+        </ion-list>
+        </div>
+        
+        
+
+ <div class="grop_cvr">
+         <ion-list radio-group [(ngModel)]="data.tb_test" name="tb_test">
+            <ion-item>
+                <ion-label>2.   Have you had a TB scan test within the last Year?</ion-label>
+            </ion-item>
+            
+               <ion-item class="itm_slct">
+                <ion-label>Yes</ion-label>
+                <ion-radio value="Y" checked></ion-radio>
+            </ion-item>
+            
+            <ion-item class="itm_slct">
+                <ion-label>No</ion-label>
+                <a href="basicinformation.ts"></a>
+                <ion-radio value="N"></ion-radio>
+            </ion-item>
+        </ion-list>
+
+
+        <ion-list>
+            <ion-item>
+                <ion-label>Date of your last TB Test?</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="data.tb_date" name="tb_date"></ion-datetime>
+            </ion-item>
+        </ion-list>
+
+
+
+<ion-list radio-group [(ngModel)]="data.tb_copy" name="tb_copy">
+            <ion-item>
+                <ion-label>Do you have a copy of your TB Test?</ion-label>
+            </ion-item>
+            
+               <ion-item class="itm_slct">
+                <ion-label>Yes</ion-label>
+                <ion-radio value="Y" checked></ion-radio>
+            </ion-item>
+            
+            <ion-item class="itm_slct">
+                <ion-label>No</ion-label>
+                <a href="basicinformation.ts"></a>
+                <ion-radio value="N"></ion-radio>
+            </ion-item>
+        </ion-list>
+ </div>
+
+        
+         <div class="grop_cvr">
+<ion-list radio-group [(ngModel)]="data.cpr_cer" name="cpr_cer">
+            <ion-item>
+                <ion-label>3.   Do you have your CPR Certification?</ion-label>
+            </ion-item>
+            
+               <ion-item class="itm_slct">
+                <ion-label>Yes</ion-label>
+                <ion-radio value="Y" checked></ion-radio>
+            </ion-item>
+            
+            <ion-item class="itm_slct">
+                <ion-label>No</ion-label>
+                <a href="basicinformation.ts"></a>
+                <ion-radio value="N"></ion-radio>
+            </ion-item>
+        </ion-list>
+
+        <ion-list>
+            <ion-item>
+                <ion-label>When Does your CPR expire?</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="data.cpr_exp_date" name="cpr_exp_date"></ion-datetime>
+            </ion-item>
+        </ion-list>
+
+     
+
+<ion-list radio-group [(ngModel)]="data.cpr_card" name="cpr_card">
+            <ion-item>
+                <ion-label>   Do you have a your CPR Card?</ion-label>
+            </ion-item>
+            
+               <ion-item class="itm_slct">
+                <ion-label>Yes</ion-label>
+                <ion-radio value="Y" checked></ion-radio>
+            </ion-item>
+            
+            <ion-item class="itm_slct">
+                <ion-label>No</ion-label>
+                <a href="basicinformation.ts"></a>
+                <ion-radio value="N"></ion-radio>
+            </ion-item>
+        </ion-list>
+         </div>
+
+        
+        
+ <div class="grop_cvr">
+<ion-list radio-group [(ngModel)]="data.nursing_lic" name="nursing_lic">
+            <ion-item>
+                <ion-label>4.   Do you have a current Nursing License?</ion-label>
+            </ion-item>
+            
+               <ion-item class="itm_slct">
+                <ion-label>Yes</ion-label>
+                <ion-radio value="Y" checked></ion-radio>
+            </ion-item>
+            
+            <ion-item class="itm_slct">
+                <ion-label>No</ion-label>
+                <a href="basicinformation.ts"></a>
+                <ion-radio value="N"></ion-radio>
+            </ion-item>
+        </ion-list>
+
+
+        <ion-list>
+            <ion-item>
+                <ion-label>If your are an RN or LPN, when does your nursing license expire?</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="data.nur_lic_exp" name="nur_lic_exp"></ion-datetime>
+            </ion-item>
+        </ion-list>
+
+ </div>
+        
+        
+        
+ <div class="grop_cvr">
+<ion-list radio-group [(ngModel)]="data.fmlycre_reg" name="fmlycre_reg">
+            <ion-item>
+                <ion-label>6.   Are you registered with Family care safety Registry?</ion-label>
+            </ion-item>
+            
+               <ion-item class="itm_slct">
+                <ion-label>Yes</ion-label>
+                <ion-radio value="Y" checked></ion-radio>
+            </ion-item>
+            
+            <ion-item class="itm_slct">
+                <ion-label>No</ion-label>
+                <a href="basicinformation.ts"></a>
+                <ion-radio value="N"></ion-radio>
+            </ion-item>
+        </ion-list>
+
+
+
+<ion-list radio-group [(ngModel)]="data.drug_screen" name="drug_screen">
+            <ion-item>
+                <ion-label>Have you had a drug screen within the last 6 months?</ion-label>
+            </ion-item>
+            
+               <ion-item class="itm_slct">
+                <ion-label>Yes</ion-label>
+                <ion-radio value="Y" checked></ion-radio>
+            </ion-item>
+            
+            <ion-item class="itm_slct">
+                <ion-label>No</ion-label>
+                <a href="basicinformation.ts"></a>
+                <ion-radio value="N"></ion-radio>
+            </ion-item>
+        </ion-list>
+ </div>
+     
+        <button full ion-button color="blue" class="btnblu" (click)="nextsubmit(basicinfo_Form)">Submit</button>
+    </form>
+</ion-content>
