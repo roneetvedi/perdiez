@@ -14,7 +14,8 @@ import { DropboxProvider } from '../../providers/dropbox/dropbox';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { FilePath } from '@ionic-native/file-path';
-
+import {LoadingController} from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 /**
  * Generated class for the ResumeoptionPage page.
  *
@@ -48,10 +49,10 @@ public showname: any;
       private transfer: FileTransfer, private androidPermissions: AndroidPermissions,
       private file: File,private iab:InAppBrowser,
       public actionSheetCtrl: ActionSheetController,
-      public navParams: NavParams,
+      public navParams: NavParams,public common:CommonProvider, public toastCtrl:ToastController,
+      public loadingCtrl:LoadingController ,
       public dropbox: DropboxProvider,
       private fileChooser: FileChooser,
-      public common: CommonProvider,
        ) {
        this.GO = "GO";
        //OAuth
@@ -166,14 +167,14 @@ checkPermission(uri)
  resumeupload()
      {
      alert("upload")
-        const fileTransfer: TransferObject = this.transfer.create();   
+        const fileTransfer: FileTransferObject = this.transfer.create();   
           let currentName = this.docUri.substring(this.docUri.lastIndexOf('/') + 1);    
-//alert('currentName ' + currentName);    
+alert('currentName ' + currentName);    
  let options1: FileUploadOptions = {      
   fileKey: 'resume',        
    fileName: currentName,        
    headers: {},       
-    mimeType:"application/pdf",     
+    mimeType:"image/jpg",     
        params: {      
             action: "docupload",      
    
@@ -181,8 +182,8 @@ checkPermission(uri)
                 },      
   chunkedMode: false    
 }  
-    //alert('data '+options1);    
-      this.commonProvider = new CommonProvider(this.loadingCtrl);  
+    alert('data '+options1);    
+      this.common = new CommonProvider(this.loadingCtrl);  
         //  this.commonProvider.Loader.present();  
           var Loading = this.loadingCtrl.create({    
             spinner: 'bubbles',  
@@ -190,7 +191,7 @@ checkPermission(uri)
                  cssClass: 'loader'   
                       });    
                       
-//Loading.present().then(() => {    
+Loading.present().then(() => {    
     alert("ghjgj");
   fileTransfer.upload(this.docUri, "http://rupak.crystalbiltech.com/hospital/api.php", options1)  
       .then((data) => {      
@@ -202,11 +203,11 @@ checkPermission(uri)
                Loading.dismiss()        
           alert("error" + JSON.stringify(error));          
    });    
-//})
+})
  }
  nxtapi()
      {
-     alert("galal");
+     alert("nxt");
  }
  chooseFileIOS()
      {
